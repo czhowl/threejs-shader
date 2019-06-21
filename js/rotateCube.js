@@ -40,7 +40,7 @@ void main() {
         specular = pow(specAngle, 100.0);
         addedLights.rgb += specular;
     }
-    vec3 color = mix(colorA, colorB, vUv.z);
+    vec3 color = mix(colorA, colorB, vUv.z * 0.5 + 0.5);
     vec3 c = color * addedLights.rgb + color * 0.1;
     gl_FragColor = vec4(c, 0.99);
 }
